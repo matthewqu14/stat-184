@@ -197,6 +197,3 @@ def lqr(A, B, m, Q, R, M, q, r, b, T):
     return ret[::-1]
 
 
-def compute_approximation(Q, M, R):
-    H = np.block([[Q, M], [M.T, R]])
-    return Q, M, R

@@ -2,6 +2,7 @@ import numpy as np
 from finite_difference_method import gradient, jacobian, hessian
 from lqr import lqr
 
+
 class LocalLinearizationController:
     def __init__(self, env):
         """
@@ -46,6 +47,21 @@ class LocalLinearizationController:
         next_observation, cost, done, info = env.step(a)
         return next_observation
 
+    def compute_approximation(self, Q, M, R, lam=1e-7):
+        H = np.block([[Q, M], [M.T, R]])
+        v, w = np.linalg.eig(H)
+        H_approx = np.zeros(H.shape)
+        for i, vec in enumerate(v):
+            if vec > 0:
+                H_approx += vec * w[:, i:i + 1] @ w[:, i:i + 1].T
+        H_approx += lam * np.identity(H.shape[0])
+        q1, q2 = Q.shape
+        m1, m2 = M.shape
+        r1, r2 = R.shape
+        Q_new = H_approx[:q1, :q2]
+        M_new = H_approx[:m1, q2:q2 + m2]
+        R_new = H_approx[q1:q1 + r1, q2:q2 + r2]
+        return Q_new, M_new, R_new
 
     def compute_local_policy(self, s_star, a_star, T):
         """
@@ -68,22 +84,27 @@ class LocalLinearizationController:
         B = jacobian(lambda a1: self.f(s_star, a1), a_star)
 
         q = gradient(lambda s1: self.c(s1, a_star), s_star)
-        r = gradient(lambda a1: self.f(s_star, a1), a_star)
+        r = gradient(lambda a1: self.c(s_star, a1), a_star)
 
         Q = hessian(lambda s1: self.c(s1, a_star), s_star)
-        R = hessian(lambda a1: self.c(s_star, a1), s_star)
-        M = hessian(lambda sa: self.c(sa[:-1], sa[-1]), np.concatenate((s_star, a_star)))[:-1, -1]
+        R = hessian(lambda a1: self.c(s_star, a1), a_star)
+        M = hessian(lambda sa: self.c(sa[:-1], sa[-1:]), np.concatenate((s_star, a_star)))[:-1, -1:]
 
         Q_2 = Q / 2
         R_2 = R / 2
         q_2 = (q.T - s_star.T @ Q - a_star.T @ M.T).T
+        q_2 = q_2[:, None]
         r_2 = (r.T - a_star.T @ R - s_star.T @ M).T
+        r_2 = r_2[:, None]
         b = self.c(s_star, a_star) + 0.5 * s_star.T @ Q_2 @ s_star + 0.5 * a_star.T @ R @ a_star + \
             s_star.T @ M @ a_star - q.T @ s_star - r.T @ a_star
         b = b.flatten()
         m = self.f(s_star, a_star) - A @ s_star - B @ a_star
+        m = m[:, None]
 
-        return lqr(A, B, m, Q_2, R_2, M, q_2, r_2, b, T)
+        Q1, M1, R1 = self.compute_approximation(Q_2, M, R_2)
+
+        return lqr(A, B, m, Q1, R1, M1, q_2, r_2, b, T)
 
 
 class PIDController:

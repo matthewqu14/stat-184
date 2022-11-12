@@ -33,7 +33,7 @@ for t in range(T):
     env.render()
     if flag == 'LQR':
         (K,k) = policies[t]
-        action = (K @ observation + k)
+        action = (K @ observation + k).reshape(1,)
     else:
         err = np.dot(observation, mask) - setpoint
         action = controller.get_action(err).reshape(1,)

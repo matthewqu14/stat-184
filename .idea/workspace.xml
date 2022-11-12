@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c815e785-4722-43bc-b98a-06af95a44890" name="Default Changelist" comment="" />
+    <list default="true" id="c815e785-4722-43bc-b98a-06af95a44890" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/STAT184.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/STAT184.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pset3/asdf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pset3/cartpole.py" beforeDir="false" afterPath="$PROJECT_DIR$/pset3/cartpole.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pset3/cartpole_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/pset3/cartpole_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pset3/lqr.py" beforeDir="false" afterPath="$PROJECT_DIR$/pset3/lqr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pset3/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/pset3/test.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +25,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="2EMJp4PpiQpRwupdUcdfLWMUfUc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/miniconda3/envs/gym-0.21/python.exe" />
@@ -38,7 +52,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test (1)">
+  <component name="RunManager" selected="Python.cartpole">
     <configuration name="asdf" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="STAT184" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -61,7 +75,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="cartpole" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="STAT184" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -69,12 +83,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pset1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pset3" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pset1/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pset3/cartpole.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.cartpole" />
         <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.asdf" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.visualize" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -188,17 +202,30 @@
       <workItem from="1667939828430" duration="1931000" />
       <workItem from="1668212221328" duration="17520000" />
       <workItem from="1668231771794" duration="640000" />
+      <workItem from="1668277492860" duration="1518000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/STAT184$main.coverage" NAME="main Coverage Results" MODIFIED="1664493358825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pset1" />
     <SUITE FILE_PATH="coverage/STAT184$pset0.coverage" NAME="pset0 Coverage Results" MODIFIED="1662595010178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/STAT184$visualize.coverage" NAME="visualize Coverage Results" MODIFIED="1665956819604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pset2" />
-    <SUITE FILE_PATH="coverage/STAT184$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1668231788120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pset3" />
+    <SUITE FILE_PATH="coverage/STAT184$cartpole.coverage" NAME="cartpole Coverage Results" MODIFIED="1668278623780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pset3" />
+    <SUITE FILE_PATH="coverage/STAT184$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1668278361603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pset3" />
     <SUITE FILE_PATH="coverage/STAT184$asdf.coverage" NAME="asdf Coverage Results" MODIFIED="1668227991370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pset3" />
     <SUITE FILE_PATH="coverage/STAT184$test.coverage" NAME="test Coverage Results" MODIFIED="1665971397585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pset2" />
   </component>

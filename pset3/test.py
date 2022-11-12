@@ -336,7 +336,7 @@ def run_policy(init_state, x_s, u_s, T=500, num_episodes=100):
     for _ in range(num_episodes):
         observation = env.reset(state=init_state)
         for (K, k) in policies:
-            action = (K @ observation + k)
+            action = (K @ observation + k).reshape(1,)
             observation, cost, done, info = env.step(action)
             total_cost += cost
             if done:
